@@ -43,3 +43,6 @@ query = {
         ["trdom","miljodom","migdom","krdom","hrdom","hdbeslut","frdom","hfdbeslut"],
         "datadoc":False
 }
+res = requests.post(base_url + "search", json=query, headers=generic_headers, timeout=120)
+results = json.loads(res.text)
+print(json.dumps(results, indent=4))
